@@ -1,0 +1,97 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+<head>
+<title><roundcube:object name="pagetitle" /></title>
+<roundcube:include file="/includes/links.html" />
+</head>
+<body>
+
+<div data-role="page" id="page_mail_list" class="jqm-mail" data-dom-cache="true">
+	<div data-role="header" data-position="fixed" data-theme="a" class="jqm-mail-header" data-tap-toggle="false">
+		<div data-role="controlgroup" data-type="horizontal" class="jqm-mail-leftpanel-link ui-mini ui-btn-left">
+			<a href="#mailview-left-panel" class="ui-link ui-btn ui-shadow ui-icon-bars ui-btn-icon-notext" data-rel="open">Menu</a>
+			<!-- <a href="#" onclick="toggleFullScreen();" id="togglefullscreenbutton" class="ui-link ui-btn ui-shadow ui-icon-arrow-u-r ui-btn-icon-notext">Fullscreen</a> -->
+			<a href="#" onclick="rcmail.command('checkmail');" id="refresh_mail_button" class="ui-link ui-btn ui-shadow ui-icon-refresh ui-btn-icon-notext">Fullscreen</a>
+		</div>
+		<h1>Mail</h1>
+		<div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right">			
+			<a href="#" class="jqm-mail-open-searchbox ui-link ui-btn ui-shadow ui-icon-search ui-btn-icon-notext">Search</a>
+			<a href="#apps-right-panel" class="jqm-apps-rightpanel-link ui-link ui-btn ui-shadow ui-icon-grid ui-btn-icon-notext" data-rel="open">Apps</a>
+		</div>
+	</div>
+	
+	<div data-role="header" data-position="fixed" data-theme="a" class="jqm-mail-search-header" data-tap-toggle="false">
+		<div data-role="controlgroup" data-type="horizontal" class="jqm-mail-leftpanel-link ui-mini ui-btn-left">
+			<a href="#" class="jqm-mail-cancel-searchbox ui-link ui-btn ui-shadow ui-icon-back ui-btn-icon-notext">Cancel</a>
+		</div>
+		<div class="searchbox">
+			<roundcube:object name="searchform" id="quicksearchbox" />
+		</div>
+	</div>
+	
+	<div id="mailview-left-panel" data-theme="b" data-role="panel" data-position="left" data-display="push" data-position-fixed="true" class="jqm-mail-left-panel">
+		<div class="ui-grid-a">
+				<div class="ui-block-a"><roundcube:object name="username" /></div>
+				<div class="ui-block-b"><a href="#mailboxmenu" data-rel="popup" id="mailsettingsbutton" data-role="button" data-icon="gear" data-iconpos="notext" data-theme="b"></a></div>
+		</div>
+		<div class="ui-grid-solo">
+			<div class="ui-block-a">
+				<roundcube:button data-role="button" command="compose" type="link" class="button compose disabled ui-link ui-btn ui-btn-a ui-icon-edit ui-btn-icon-left ui-shadow ui-corner-all" classAct="button compose ui-link ui-btn ui-btn-a ui-icon-edit ui-btn-icon-left ui-shadow ui-corner-all" classSel="button compose pressed ui-link ui-btn ui-btn-a ui-icon-edit ui-btn-icon-left ui-shadow ui-corner-all" label="compose" title="writenewmessage" />
+			</div>
+		</div>
+		<!-- PAMELA Ajout d'un conteneur pour le nom de la boite -->
+		<roundcube:container name="folderlistheader_mobile" id="folderlistheader_mobile" />
+		<br>
+		<roundcube:object name="mailboxlist" id="mailboxlist" data-theme="b" data-role="listview" class="treelist listing" folder_filter="mail" unreadwrap="%s" />
+		<p>
+			<div id="folderlist-footer" class="boxfooter">
+				<roundcube:if condition="env:quota" />
+					<roundcube:object name="quotaDisplay" id="quotadisplay" class="countdisplay" display="text" />
+				<roundcube:endif />
+				<br>
+			</div>
+		</p>
+		<br><br><br>
+	</div>
+	
+	<roundcube:include file="/includes/rightpanel.html" />
+	
+	<!-- messagelist -->
+	<div role="main" class="ui-content jqm-content">
+		<div id="pull_to_refresh">
+			<span class="pull"><roundcube:label name="mobile.pull_to_refresh" /></span>
+		</div>	
+		<p>
+			<roundcube:object name="messages"
+				noheader="true"
+				id="messagelist"
+				class="records-table messagelist"
+				optionsmenuIcon="false" />
+		</p>
+		<br><br>
+		<div id="jqm-mail-newmessage-button">
+			<roundcube:button data-role="button" command="compose" type="link" class="button compose disabled ui-link ui-btn ui-icon-edit ui-shadow ui-btn-icon-notext" label="compose" title="writenewmessage" />
+		</div>
+	</div>
+	
+	<div id="mailboxmenu" class="ui-content" data-role="popup" >
+		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+		<ul class="" id="mailboxoptionsmenu" data-role="listview">
+			<li><roundcube:button id="popup_expunge_button" command="expunge" type="link" label="compact" /></li>
+			<li><roundcube:button id="popup_purge_button" command="purge" type="link" label="empty" /></li>	
+			<roundcube:if condition="env:threads" />
+				<li><a href="#list" class="iconbutton listmode" id="maillistmode" title="<roundcube:label name='list' />"><roundcube:label name='list' /></a></li>
+				<li><a href="#threads" class="iconbutton threadmode" id="mailthreadmode" title="<roundcube:label name='threads' />"><roundcube:label name='threads' /></a></li>
+			<roundcube:else />
+				<li><a href="#list" class="iconbutton listmode selected" title="<roundcube:label name='list' />" onclick="return false"><roundcube:label name='list' /></a></li>
+				<li><a href="#threads" class="iconbutton threadmode disabled" title="<roundcube:label name='threads' />" onclick="return false"><roundcube:label name='threads' /></a></li>
+			<roundcube:endif />
+		</ul>
+	</div>
+
+</div><!-- end page -->
+
+<roundcube:include file="/includes/footer.html" />
+
+</body>
+</html>

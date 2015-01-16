@@ -1,0 +1,25 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+<head>
+<title><roundcube:object name="pagetitle" /></title>
+<roundcube:include file="/includes/links.html" />
+</head>
+<body>
+
+<div data-role="page">
+	<div data-role="header" class="jqm-error-header ui-header ui-bar-a ui-header-fixed slidedown" data-position="fixed" data-theme="a" id="jqm-mail-header" data-tap-toggle="false" data-add-back-btn="true" data-direction="reverse">
+		<a role="button" data-role="button" class="button back ui-link ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext" id="rcmbtn112" href="./?_task=mail"><roundcube:label name="back"/></a>
+		<h1 aria-level="1" role="heading" class="ui-title"><roundcube:label name="error"/></h1>
+	</div>
+	
+	<div role="main" class="ui-content">
+		<br><br>
+		<div class="uibox centerbox errorbox">
+			$__page_content
+		</div>
+	</div>
+</div>
+<roundcube:include file="/includes/footer.html" />
+
+</body>
+</html>

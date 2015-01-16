@@ -1,0 +1,48 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+<head>
+<title><roundcube:object name="pagetitle" /></title>
+<roundcube:include file="/includes/links.html" />
+</head>
+<body>
+<div data-role="page" class="jqm-addressbook" id="page_addressbook_list" data-dom-cache="true">
+	<div data-role="header" data-position="fixed" data-theme="a" class="jqm-addressbook-header" data-tap-toggle="false">
+		<div data-role="controlgroup" data-type="horizontal" class="jqm-addressbook-leftpanel-link ui-mini ui-btn-left">
+			<a href="#addressbook-left-panel" class="ui-link ui-btn ui-shadow ui-icon-bars ui-btn-icon-notext" data-rel="open">Groups</a>
+			<roundcube:button command="add" type="link" title="newcontact" class="listbutton add disabled ui-link ui-btn ui-btn-a ui-icon-plus ui-shadow ui-btn-icon-notext" classAct="listbutton add ui-link ui-btn ui-btn-a ui-icon-plus ui-shadow ui-btn-icon-notext" innerClass="inner" label="newcontact" />
+		</div>
+		<h1>Contacts</h1>
+		<div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right">
+			<a href="#" onclick="toggleFullScreen();" id="togglefullscreenbutton" class="ui-link ui-btn ui-shadow ui-icon-arrow-u-r ui-btn-icon-notext">Fullscreen</a>
+			<a href="#apps-right-panel" class="jqm-apps-rightpanel-link ui-link ui-btn ui-shadow ui-icon-grid ui-btn-icon-notext" data-rel="open">Apps</a>
+		</div>
+	</div>
+	
+	<div id="addressbook-left-panel" data-theme="b" data-role="panel" data-position="left" data-display="overlay" data-position-fixed="true" class="jqm-addressbook-left-panel">
+		<div class="ui-grid-a">
+				<div class="ui-block-a"><roundcube:object name="username" /></div>
+		</div>
+		<div class="ui-grid-solo">
+			<div class="ui-block-a">
+				<roundcube:button command="add" type="link" title="newcontact" class="listbutton add disabled ui-link ui-btn ui-btn-a ui-icon-plus ui-btn-icon-left ui-shadow ui-corner-all" classAct="listbutton add ui-link ui-btn ui-btn-a ui-icon-plus ui-btn-icon-left ui-shadow ui-corner-all" innerClass="inner" label="newcontact" />
+			</div>
+		</div>
+		<br>
+		<roundcube:object name="directorylist" id="directorylist_mobile" data-theme="b" data-role="listview" class="treelist listing" />
+		<br><br><br>
+	</div>
+	
+	<roundcube:include file="/includes/rightpanel.html" />
+	
+	<div role="main" class="ui-content jqm-content">
+		<div id="quicksearchbar" class="searchbox">
+			<roundcube:object name="searchform" id="quicksearchbox" />
+		</div>
+		<roundcube:object name="addresslist" id="contacts-table" class="listing" noheader="true" />
+	</div>
+</div>
+
+<roundcube:include file="/includes/footer.html" />
+
+</body>
+</html>
