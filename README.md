@@ -31,7 +31,7 @@ Installation
 
 Works on Roundcube 1.1.1
 
-You need to add melanie2_larry_mobile skin (https://github.com/messagerie-melanie2/roundcube_skin_melanie2_larry_mobile) in the Roundcube skins folder, and jquery_mobile plugin (https://github.com/messagerie-melanie2/roundcube_jquery_mobile) in plugins folder
+You need to add mobile plugin (https://github.com/messagerie-melanie2/roundcube_mobile) and jquery_mobile plugin (https://github.com/messagerie-melanie2/roundcube_jquery_mobile) in plugins folder
 
 
 Rename the folder to "melanie2_larry_mobile" and add it to your Roundcube instance/skins directory.
