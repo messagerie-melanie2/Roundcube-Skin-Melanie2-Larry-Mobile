@@ -84,7 +84,6 @@
 
 #messagelist li span.attachment,
 #messagelist li span.threads,
-#messagelist li span.status,
 #messagelist li span.flag,
 #messagelist li span.priority {
 	width: 20px;
@@ -131,7 +130,6 @@
 }
 
 #messagelist li span.fromto,
-#messagelist li span.status,
 #messagelist li span.size {
 	display: none;
 }

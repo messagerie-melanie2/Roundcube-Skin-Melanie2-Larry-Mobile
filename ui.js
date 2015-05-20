@@ -526,7 +526,6 @@ function rcube_mail_ui()
     bh = (form.height() - bottom.position().top);
     ovflw = minheight - bh;
     btns = ovflw > -100 ? 0 : 40;
-    bottom.css('height', Math.max(minheight, bh) + 'px');
     form.css('overflow', ovflw > 0 ? 'auto' : 'hidden');
 
     w = body.parent().width() - 5;

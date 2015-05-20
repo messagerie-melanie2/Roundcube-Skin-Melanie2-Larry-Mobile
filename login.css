@@ -46,3 +46,20 @@ label {
 	border-radius: 3px;
 	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
+
+#login-form table {
+  width: 200px;
+}
+
+#login-form table .title {
+  width: 50px;
+}
+
+#login-form table .input {
+  width: 175px;
+}
+
+#login-form table .input input,
+#login-form table .input select {
+  width: 175px;
+}
