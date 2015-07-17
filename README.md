@@ -41,3 +41,20 @@ Add "mobile" in the Roundcube config.inc.php file in "plugins", ex:
 $config['plugins'] = array(
     'mobile',
 );
+
+Screenshots
+-----------
+Messages
+![capture d ecran 2015-07-17 a 14 34 15](https://cloud.githubusercontent.com/assets/3693239/8747236/57569d74-2c91-11e5-91f0-99b33b3edef7.png)
+
+Open a message
+![capture d ecran 2015-07-17 a 14 34 27](https://cloud.githubusercontent.com/assets/3693239/8747241/5fe40cb0-2c91-11e5-9c0d-2f111080e5da.png)
+
+Compose a message
+![capture d ecran 2015-07-17 a 14 34 51](https://cloud.githubusercontent.com/assets/3693239/8747255/7cdc4fe4-2c91-11e5-9c26-260680f1f15b.png)
+
+Select messages on the list
+![capture d ecran 2015-07-17 a 14 35 12](https://cloud.githubusercontent.com/assets/3693239/8747260/85d17034-2c91-11e5-8e3d-340210754a2a.png)
+
+Contacts list
+![capture d ecran 2015-07-17 a 14 35 25](https://cloud.githubusercontent.com/assets/3693239/8747281/a149343c-2c91-11e5-81a2-c48e098e9cfd.png)
