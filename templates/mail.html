@@ -5,93 +5,154 @@
 <roundcube:include file="/includes/links.html" />
 </head>
 <body>
-
-<div data-role="page" id="page_mail_list" class="jqm-mail" data-dom-cache="true">
-	<div data-role="header" data-position="fixed" data-theme="a" class="jqm-mail-header" data-tap-toggle="false">
-		<div data-role="controlgroup" data-type="horizontal" class="jqm-mail-leftpanel-link ui-mini ui-btn-left">
-			<a href="#mailview-left-panel" class="ui-link ui-btn ui-shadow ui-icon-bars ui-btn-icon-notext" data-rel="open">Menu</a>
-			<!-- <a href="#" onclick="toggleFullScreen();" id="togglefullscreenbutton" class="ui-link ui-btn ui-shadow ui-icon-arrow-u-r ui-btn-icon-notext">Fullscreen</a> -->
-			<a href="#" onclick="rcmail.command('checkmail');" id="refresh_mail_button" class="ui-link ui-btn ui-shadow ui-icon-refresh ui-btn-icon-notext">Fullscreen</a>
-		</div>
-		<h1>Mail</h1>
-		<div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right">			
-			<a href="#" class="jqm-mail-open-searchbox ui-link ui-btn ui-shadow ui-icon-search ui-btn-icon-notext">Search</a>
-			<a href="#apps-right-panel" class="jqm-apps-rightpanel-link ui-link ui-btn ui-shadow ui-icon-grid ui-btn-icon-notext" data-rel="open">Apps</a>
-		</div>
-	</div>
-	
-	<div data-role="header" data-position="fixed" data-theme="a" class="jqm-mail-search-header" data-tap-toggle="false">
-		<div data-role="controlgroup" data-type="horizontal" class="jqm-mail-leftpanel-link ui-mini ui-btn-left">
-			<a href="#" class="jqm-mail-cancel-searchbox ui-link ui-btn ui-shadow ui-icon-back ui-btn-icon-notext">Cancel</a>
-		</div>
-		<div class="searchbox">
-			<roundcube:object name="searchform" id="quicksearchbox" />
-		</div>
-	</div>
-	
-	<div id="mailview-left-panel" data-theme="b" data-role="panel" data-position="left" data-display="push" data-position-fixed="true" class="jqm-mail-left-panel">
-		<div class="ui-grid-a">
-				<div class="ui-block-a"><roundcube:object name="username" /></div>
-				<div class="ui-block-b"><a href="#mailboxmenu" data-rel="popup" id="mailsettingsbutton" data-role="button" data-icon="gear" data-iconpos="notext" data-theme="b"></a></div>
-		</div>
-		<div class="ui-grid-solo">
-			<div class="ui-block-a">
-				<roundcube:button data-role="button" command="compose" type="link" class="button compose disabled ui-link ui-btn ui-btn-a ui-icon-edit ui-btn-icon-left ui-shadow ui-corner-all" classAct="button compose ui-link ui-btn ui-btn-a ui-icon-edit ui-btn-icon-left ui-shadow ui-corner-all" classSel="button compose pressed ui-link ui-btn ui-btn-a ui-icon-edit ui-btn-icon-left ui-shadow ui-corner-all" label="compose" title="writenewmessage" />
+	<div data-role="page" data-ajax="true" id="page_mail_list" class="jqm-mail"
+		data-theme="f" data-dom-cache="true">	
+		<div data-role="header" data-position="fixed" data-theme="f"
+			class="jqm-mail-header" data-tap-toggle="false">
+			<div data-role="controlgroup" data-type="horizontal"
+				class="ui-mini ui-btn-left">
+				<a href="#mailview-left-panel"
+					class="jqm-mail-leftpanel-link ui-link ui-btn ui-shadow ui-icon-bars ui-btn-icon-notext"
+					data-rel="open">Menu</a> 
+				<a href="#"
+					onclick="rcmail.command('checkmail');" id="refresh_mail_button"
+					class="ui-link ui-btn ui-shadow ui-icon-refresh ui-btn-icon-notext">Fullscreen</a>
+			</div>
+			<h1>Mail</h1>
+			<div data-role="controlgroup" data-type="horizontal"
+				class="ui-mini ui-btn-right">
+				<a href="#"
+					class="jqm-mail-open-searchbox ui-link ui-btn ui-shadow ui-icon-search ui-btn-icon-notext">Search</a>
+				<a href="#apps-right-panel"
+					class="jqm-apps-rightpanel-link ui-link ui-btn ui-shadow ui-icon-grid ui-btn-icon-notext"
+					data-rel="open">Apps</a>
 			</div>
 		</div>
-		<!-- PAMELA Ajout d'un conteneur pour le nom de la boite -->
-		<roundcube:container name="folderlistheader_mobile" id="folderlistheader_mobile" />
-		<br>
-		<roundcube:object name="mailboxlist" id="mailboxlist" data-theme="b" data-role="listview" class="treelist listing" folder_filter="mail" unreadwrap="%s" />
-		<p>
+		
+		<div data-role="header" data-position="fixed" data-theme="f"
+      class="jqm-mail-buttons-header" data-tap-toggle="false">
+      <a href="#"
+        class="jqm-mail-cancel-buttons ui-link ui-btn ui-btn-left ui-shadow ui-icon-back ui-btn-icon-notext">Cancel</a>
+      <div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right">
+        <roundcube:button command="mark" prop="read" label="markread" class="mark_as_read icon ui-link ui-btn ui-shadow ui-corner-all ui-icon-eye ui-btn-icon-notext" innerclass="icon read" />
+        <roundcube:button command="mark" prop="unread" label="markunread" class="mark_as_unread icon ui-link ui-btn ui-shadow ui-corner-all ui-icon-eye-slash ui-btn-icon-notext" innerclass="icon unread" />
+        <roundcube:button command="forward" type="link" class="button forward ui-link ui-btn ui-shadow ui-icon-mail-forward ui-btn-icon-notext" label="forward" title="forwardmessage" />
+        <roundcube:button command="reply" type="link" class="button reply ui-link ui-btn ui-shadow ui-icon-mail-reply ui-btn-icon-notext" label="reply" title="replytomessage" />
+        <roundcube:button command="delete" type="link" class="delete_message_button button delete ui-link ui-btn ui-shadow ui-corner-all ui-icon-trash-o ui-btn-icon-notext" label="delete" title="deletemessage" />
+        <a href="#" class="jqm-mail-buttons-showmore ui-link ui-btn ui-shadow ui-icon-caret-down ui-btn-icon-notext">Show more</a>                 
+      </div>
+    </div>
+    
+    <div data-role="header" data-position="fixed" data-theme="h"
+      class="jqm-mail-more-buttons-header" data-tap-toggle="false">
+      <div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right">
+		    <roundcube:button command="mark" prop="flagged" label="markflagged" class="mark_as_flagged icon ui-link ui-btn ui-shadow ui-corner-all ui-icon-star ui-btn-icon-notext" innerclass="icon flagged" />
+		    <roundcube:button command="mark" prop="unflagged" label="markunflagged" class="mark_as_unflagged icon ui-link ui-btn ui-shadow ui-corner-all ui-icon-star-o ui-btn-icon-notext" innerclass="icon unflagged" />
+		    <roundcube:button command="reply-all" type="link" class="button reply-all ui-link ui-btn ui-shadow ui-corner-all ui-icon-mail-reply-all ui-btn-icon-notext" label="replyall" title="replytoallmessage" />
+		    <roundcube:button command="move" type="link" class="button move ui-link ui-btn ui-shadow ui-corner-all ui-icon-archive ui-btn-icon-notext" label="move" title="moveto" data-menu-pos="bottom" />
+		    <roundcube:container name="more_buttons_toolbar_mobile" id="mailmorebuttonstoolbarmobile" />
+		  </div>
+    </div>
+
+		<div data-role="header" data-position="fixed" data-theme="f"
+			class="jqm-mail-search-header" data-tap-toggle="false">
+			<div data-role="controlgroup" data-type="horizontal"
+				class="ui-mini ui-btn-left">
+				<a href="#"
+					class="jqm-mail-cancel-searchbox ui-link ui-btn ui-shadow ui-icon-back ui-btn-icon-notext">Cancel</a>
+			</div>
+			<div class="searchbox">
+				<roundcube:object name="searchform" id="quicksearchbox" />
+			</div>
+		</div>
+
+		<div id="mailview-left-panel" data-theme="c" data-role="panel"
+			data-position="left" data-display="push" data-position-fixed="true"
+			class="jqm-mail-left-panel">
+			<div class="ui-grid-solo">
+        <div class="ui-block-a">
+          <div id="userphoto"><roundcube:object name="userphoto" /></div>
+        </div>
+      </div>
+			<div class="ui-grid-solo">
+				<div class="ui-block-a">
+					<roundcube:object name="username" />
+				</div>
+			</div>
+			<div class="ui-grid-solo">
+				<div class="ui-block-a">
+					<roundcube:button data-role="button" command="compose" type="link"
+						class="button compose jqm-mail-button-compose ui-link ui-btn ui-btn-a ui-alt-icon ui-icon-edit ui-btn-icon-left ui-shadow ui-corner-all"
+						label="compose" title="writenewmessage" />
+				</div>
+			</div>
+			<!-- PAMELA Ajout d'un conteneur pour le nom de la boite -->
+			<roundcube:container name="folderlistheader_mobile"
+				id="folderlistheader_mobile" />
+			<br>
+			<roundcube:object name="mailboxlist" id="mailboxlist" data-theme="h"
+				data-role="listview" class="treelist listing" folder_filter="mail"
+				unreadwrap="%s" />
+			<p>
 			<div id="folderlist-footer" class="boxfooter">
 				<roundcube:if condition="env:quota" />
-					<roundcube:object name="quotaDisplay" id="quotadisplay" class="countdisplay" display="text" />
+				<roundcube:object name="quotaDisplay" id="quotadisplay"
+					class="countdisplay" display="text" />
 				<roundcube:endif />
 				<br>
 			</div>
-		</p>
-		<br><br><br>
-	</div>
-	
-	<roundcube:include file="/includes/rightpanel.html" />
-	
-	<!-- messagelist -->
-	<div role="main" class="ui-content jqm-content">
-		<div id="pull_to_refresh">
-			<span class="pull"><roundcube:label name="melanie2_mobile.pull_to_refresh" /></span>
-		</div>	
-		<p>
-			<roundcube:object name="messages"
-				noheader="true"
-				id="messagelist"
-				class="records-table messagelist"
-				optionsmenuIcon="false" />
-		</p>
-		<br><br>
-		<div id="jqm-mail-newmessage-button">
-			<roundcube:button data-role="button" command="compose" type="link" class="button compose disabled ui-link ui-btn ui-icon-edit ui-shadow ui-btn-icon-notext" label="compose" title="writenewmessage" />
+			</p>
+			<br>
+			<br>
+			<br>
 		</div>
-	</div>
-	
-	<div id="mailboxmenu" class="ui-content" data-role="popup" >
-		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-		<ul class="" id="mailboxoptionsmenu" data-role="listview">
-			<li><roundcube:button id="popup_expunge_button" command="expunge" type="link" label="compact" /></li>
-			<li><roundcube:button id="popup_purge_button" command="purge" type="link" label="empty" /></li>	
-			<roundcube:if condition="env:threads" />
-				<li><a href="#list" class="iconbutton listmode" id="maillistmode" title="<roundcube:label name='list' />"><roundcube:label name='list' /></a></li>
-				<li><a href="#threads" class="iconbutton threadmode" id="mailthreadmode" title="<roundcube:label name='threads' />"><roundcube:label name='threads' /></a></li>
-			<roundcube:else />
-				<li><a href="#list" class="iconbutton listmode selected" title="<roundcube:label name='list' />" onclick="return false"><roundcube:label name='list' /></a></li>
-				<li><a href="#threads" class="iconbutton threadmode disabled" title="<roundcube:label name='threads' />" onclick="return false"><roundcube:label name='threads' /></a></li>
-			<roundcube:endif />
-		</ul>
-	</div>
 
-</div><!-- end page -->
+		<roundcube:include file="/includes/rightpanel.html" />
 
-<roundcube:include file="/includes/footer.html" />
+		<!-- messagelist -->
+		<div role="main" class="ui-content jqm-content">
+			<roundcube:object name="messages" noheader="true" id="messagelist"
+				class="records-table messagelist" optionsmenuIcon="false" />
+			<br>
+			<br>
+			<div id="jqm-mail-newmessage-button">
+				<roundcube:button data-role="button" command="compose" type="link"
+					class="button compose disabled ui-page-theme-g ui-btn-g ui-link ui-btn ui-icon-edit ui-shadow ui-btn-icon-notext"
+					label="compose" title="writenewmessage" />
+			</div>
+		</div>
+
+		<div id="mailboxmenu" class="ui-content" data-role="popup">
+			<a href="#" data-rel="back"
+				class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+			<ul class="" id="mailboxoptionsmenu" data-role="listview">
+				<li><roundcube:button id="popup_expunge_button"
+						command="expunge" type="link" label="compact" /></li>
+				<li><roundcube:button id="popup_purge_button" command="purge"
+						type="link" label="empty" /></li>
+				<roundcube:if condition="env:threads" />
+				<li><a href="#list" class="iconbutton listmode"
+					id="maillistmode" title="<roundcube:label name='list' />"><roundcube:label
+							name='list' /></a></li>
+				<li><a href="#threads" class="iconbutton threadmode"
+					id="mailthreadmode" title="<roundcube:label name='threads' />"><roundcube:label
+							name='threads' /></a></li>
+				<roundcube:else />
+				<li><a href="#list" class="iconbutton listmode selected"
+					title="<roundcube:label name='list' />" onclick="return false"><roundcube:label
+							name='list' /></a></li>
+				<li><a href="#threads" class="iconbutton threadmode disabled"
+					title="<roundcube:label name='threads' />" onclick="return false"><roundcube:label
+							name='threads' /></a></li>
+				<roundcube:endif />
+			</ul>
+		</div>
+
+	</div>
+	<!-- end page -->
+
+	<roundcube:include file="/includes/footer.html" />
+	<div style="display: none;"><roundcube:object name="messageCountDisplay" class="countdisplay" /></div>
 
 </body>
 </html>

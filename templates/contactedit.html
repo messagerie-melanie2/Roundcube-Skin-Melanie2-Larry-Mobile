@@ -5,15 +5,15 @@
 <roundcube:include file="/includes/links.html" />
 </head>
 <body>
-<div data-role="page" class="jqm-addressbook-search">
-	<div data-role="header" data-position="fixed" data-theme="a" class="jqm-addressbook-search-header" data-tap-toggle="false">
-		<roundcube:button name="cancel" type="link" class="button button_cancel ui-link ui-btn ui-shadow ui-icon-back" label="cancel" onclick="history.back()" condition="env:action=='add'" />
-		<roundcube:button command="show" type=""link"" class="button button_show_contact ui-link ui-btn ui-shadow ui-icon-back" label="cancel" condition="env:action=='edit'" />		
+<div data-role="page" data-ajax="true" data-theme="a" class="jqm-addressbook-search" data-dom-cache="true">
+	<div data-role="header" data-position="fixed" data-theme="f" data-tap-toggle="false">
+		<roundcube:button name="cancel" type="link" class="button button_cancel ui-link ui-btn ui-shadow ui-icon-back ui-btn-icon-notext" label="cancel" onclick="history.back()" condition="env:action=='add'" />
+		<roundcube:button command="show" type=""link"" class="button button_show_contact ui-link ui-btn ui-shadow ui-icon-back ui-btn-icon-notext" label="cancel" condition="env:action=='edit'" />		
 		<h1 class="boxtitle">
 			<roundcube:if condition="env:action=='add'" /><roundcube:label name="addcontact" />
 			<roundcube:else /><roundcube:label name="editcontact" />
 		<roundcube:endif /></h1>
-		<roundcube:button command="save" type="link" class="button mainaction ui-link ui-btn ui-shadow ui-icon-check" label="save" />
+		<roundcube:button command="save" type="link" class="button mainaction ui-link ui-btn ui-shadow ui-icon-save ui-btn-icon-notext" label="save" />
 	</div>
 	
 	<div role="main" class="ui-content jqm-content">

@@ -5,35 +5,38 @@
 <roundcube:include file="/includes/links.html" />
 </head>
 <body>
-<div data-role="page" class="jqm-message">
-	<div data-role="header" data-position="fixed" data-theme="a" id="jqm-mail-header" data-tap-toggle="true">
+<div data-role="page" data-theme="f" class="jqm-message">
+	<div data-role="header" data-position="fixed" data-theme="f" id="jqm-mail-header" data-tap-toggle="true">
 		<div style="display: none;" data-role="controlgroup" data-type="horizontal" class="jqm_message_list_group ui-mini ui-btn-left">
 			<a href="#" class="jqm_message_list ui-btn ui-link ui-shadow ui-icon-back ui-btn-icon-notext">List</a>
-			<a href="#mail-list-left-panel" class="ui-link ui-btn ui-shadow ui-icon-bullets ui-btn-icon-notext" data-rel="open">Menu</a>
-		</div>		
-		<roundcube:button command="list" type="link" class="rc_message_back button back ui-link ui-btn-left ui-btn ui-shadow ui-icon-back ui-btn-icon-notext" label="back" />
+			<a href="#" class="jqm_message_previous ui-btn ui-link ui-shadow ui-icon-chevron-circle-left ui-btn-icon-notext">Previous</a>
+			<a href="#" class="jqm_message_next ui-btn ui-link ui-shadow ui-icon-chevron-circle-right ui-btn-icon-notext">Next</a>
+		</div>
+		<div data-role="controlgroup" data-type="horizontal" class="rc_message_back ui-mini ui-btn-left">
+		  <roundcube:button command="list" type="link" class="button back ui-link ui-btn ui-shadow ui-icon-back ui-btn-icon-notext" label="back" />
+		  <roundcube:button command="previousmessage" type="link" class="button prevpage ui-btn ui-shadow ui-icon-chevron-circle-left ui-btn-icon-notext" innerClass="inner" title="previousmessage" label="previous" />
+      <roundcube:button command="nextmessage" type="link" class="button nextpage ui-btn ui-shadow ui-icon-chevron-circle-right ui-btn-icon-notext" innerClass="inner" title="nextmessage" label="next" />
+    </div>
 		<h1></h1>
 			<div data-role="controlgroup" data-type="horizontal" class="jqm-calendar-leftpanel-link ui-mini ui-btn-right">
-			<roundcube:button command="mark" prop="unread" label="markunread" class="mark_as_unread icon ui-link ui-btn ui-shadow ui-corner-all ui-icon-forbidden ui-btn-icon-notext" innerclass="icon unread" />					
-			<roundcube:button command="forward" type="link" class="button forward ui-link ui-btn ui-shadow ui-icon-arrow-r ui-btn-icon-notext" label="forward" title="forwardmessage" />
-			<roundcube:button command="reply" type="link" class="button reply ui-link ui-btn ui-shadow ui-icon-action ui-btn-icon-notext" label="reply" title="replytomessage" />
-			<a href="#buttons-right-panel" class="jqm-apps-rightpanel-link ui-link ui-btn ui-shadow ui-icon-bars ui-btn-icon-notext" data-rel="open">Buttons</a>
+			<roundcube:button command="mark" prop="unread" label="markunread" class="mark_as_unread icon ui-link ui-btn ui-shadow ui-corner-all ui-icon-eye-slash ui-btn-icon-notext" innerclass="icon unread" />					
+			<roundcube:button command="forward" type="link" class="button forward ui-link ui-btn ui-shadow ui-icon-mail-forward ui-btn-icon-notext" label="forward" title="forwardmessage" />
+			<roundcube:button command="reply" type="link" class="button reply ui-link ui-btn ui-shadow ui-icon-mail-reply ui-btn-icon-notext" label="reply" title="replytomessage" />
+			<a href="#buttons-right-panel" class="jqm-apps-rightpanel-link ui-link ui-btn ui-shadow ui-icon-ellipsis-v ui-btn-icon-notext" data-rel="open">Buttons</a>
 		</div>
-	</div>
-	<div id="mail-list-left-panel" data-role="panel" data-position="left" data-display="overlay" data-position-fixed="true" class="jqm-mail-left-panel">
 	</div>
 	<div id="buttons-right-panel" data-theme="b" data-role="panel" data-position="right" data-display="overlay" data-position-fixed="true" class="jqm-buttons-right-panel">
 		<a href="#jqm-mail-header" class="ui-link ui-btn ui-shadow ui-corner-all ui-icon-carat-r ui-btn-icon-notext" data-rel="close">Close</a>
-		<roundcube:button command="reply" type="link" class="button reply ui-link ui-btn ui-shadow ui-corner-all ui-icon-action ui-btn-icon-left" label="reply" title="replytomessage" />
-		<roundcube:button command="reply-all" type="link" class="button reply-all ui-link ui-btn ui-shadow ui-corner-all ui-icon-action ui-btn-icon-left" label="replyall" title="replytoallmessage" />
-		<roundcube:button command="forward" type="link" class="button forward ui-link ui-btn ui-shadow ui-corner-all ui-icon-forward ui-btn-icon-left" label="forward" title="forwardmessage" />
-		<roundcube:button command="move" type="link" class="button move ui-link ui-btn ui-shadow ui-corner-all ui-icon-bullets ui-btn-icon-left" label="move" title="moveto" data-menu-pos="bottom" />
-		<roundcube:button command="delete" type="link" class="delete_message_button button delete ui-link ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-left" label="delete" title="deletemessage" />
+		<roundcube:button command="reply" type="link" class="button reply ui-link ui-btn ui-shadow ui-corner-all ui-icon-mail-reply ui-btn-icon-left" label="reply" title="replytomessage" />
+		<roundcube:button command="reply-all" type="link" class="button reply-all ui-link ui-btn ui-shadow ui-corner-all ui-icon-mail-reply-all ui-btn-icon-left" label="replyall" title="replytoallmessage" />
+		<roundcube:button command="forward" type="link" class="button forward ui-link ui-btn ui-shadow ui-corner-all ui-icon-mail-forward ui-btn-icon-left" label="forward" title="forwardmessage" />
+		<roundcube:button command="move" type="link" class="button move ui-link ui-btn ui-shadow ui-corner-all ui-icon-archive ui-btn-icon-left" label="move" title="moveto" data-menu-pos="bottom" />
+		<roundcube:button command="delete" type="link" class="delete_message_button button delete ui-link ui-btn ui-shadow ui-corner-all ui-icon-trash-o ui-btn-icon-left" label="delete" title="deletemessage" />
 		<roundcube:container name="toolbar_mobile" id="mailtoolbarmobile" />		
 		<roundcube:button command="mark" prop="read" label="markread" class="mark_as_read icon ui-link ui-btn ui-shadow ui-corner-all ui-icon-eye ui-btn-icon-left" innerclass="icon read" />
-		<roundcube:button command="mark" prop="unread" label="markunread" class="mark_as_unread icon ui-link ui-btn ui-shadow ui-corner-all ui-icon-forbidden ui-btn-icon-left" innerclass="icon unread" />
+		<roundcube:button command="mark" prop="unread" label="markunread" class="mark_as_unread icon ui-link ui-btn ui-shadow ui-corner-all ui-icon-eye-slash ui-btn-icon-left" innerclass="icon unread" />
 		<roundcube:button command="mark" prop="flagged" label="markflagged" class="mark_as_flagged icon ui-link ui-btn ui-shadow ui-corner-all ui-icon-star ui-btn-icon-left" innerclass="icon flagged" />
-		<roundcube:button command="mark" prop="unflagged" label="markunflagged" class="mark_as_unflagged icon ui-link ui-btn ui-shadow ui-corner-all ui-icon-forbidden ui-btn-icon-left" innerclass="icon unflagged" />		
+		<roundcube:button command="mark" prop="unflagged" label="markunflagged" class="mark_as_unflagged icon ui-link ui-btn ui-shadow ui-corner-all ui-icon-star-o ui-btn-icon-left" innerclass="icon unflagged" />		
 	</div>
 	<roundcube:object name="mailboxlist" folder_filter="mail" type="js" />
 	<div role="main" class="ui-content message-content">
@@ -73,8 +76,8 @@
 		</div>
 		
 		<div class="ui-grid-a">
-			<div class="ui-block-a"><roundcube:button command="reply" type="link" class="button reply disabled ui-link ui-btn ui-shadow ui-corner-all ui-icon-action ui-btn-icon-top" classAct="button reply ui-link ui-btn ui-shadow ui-corner-all ui-icon-action ui-btn-icon-top" classSel="button reply pressed ui-link ui-btn ui-shadow ui-corner-all ui-icon-action ui-btn-icon-top" label="reply" title="replytomessage" /></div>
-			<div class="ui-block-b"><roundcube:button command="delete" type="link" class="delete_message_button button delete disabled ui-link ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-top" classAct="button delete ui-link ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-top" classSel="button delete pressed ui-link ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-top" label="delete" title="deletemessage" /></div>
+			<div class="ui-block-a"><roundcube:button command="reply" type="link" class="button reply ui-link ui-btn ui-btn-h ui-shadow ui-alt-icon ui-corner-all ui-icon-mail-reply ui-btn-icon-top" label="reply" title="replytomessage" /></div>
+			<div class="ui-block-b"><roundcube:button command="delete" type="link" class="delete_message_button button delete ui-link ui-btn ui-btn-h ui-alt-icon  ui-shadow ui-corner-all ui-icon-trash-o ui-btn-icon-top" label="delete" title="deletemessage" /></div>
 		</div>
 	</div>
 	<div id="slide-message" class="jqm-message-slide">

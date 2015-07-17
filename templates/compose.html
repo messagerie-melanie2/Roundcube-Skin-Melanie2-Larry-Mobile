@@ -6,101 +6,104 @@
 </head>
 <body>
 
-<div data-role="page">
+	<div data-role="page" data-theme="a" class="jqm-compose">
 
-	<div data-role="header" data-position="fixed" data-theme="a" data-tap-toggle="false">
-		<roundcube:button command="list" type="link" class="button back disabled ui-link ui-btn-left ui-btn ui-shadow" classAct="button back ui-link ui-btn-left ui-btn ui-shadow" classSel="button back pressed ui-link ui-btn-left ui-btn ui-shadow" label="cancel" condition="!env:extwin" />
-		<h1><roundcube:object name="pagetitle" /></h1>
-		<roundcube:button command="send" type="link" class="button send ui-link ui-btn ui-shadow ui-btn-right" classAct="button send ui-link ui-btn ui-shadow ui-btn-right" classSel="button send pressed ui-link ui-btn ui-shadow ui-btn-right" label="send" title="sendmessage" />
-	</div>
-	
-	<div role="main" class="ui-content">
-		<roundcube:form name="form" method="post" id="compose-content" class="uibox">
-		
-			<!-- message headers -->
-			<div id="composeheaders">
-				<a href="#options" id="composeoptionstoggle" class="moreheaderstoggle"><span class="iconlink" title="<roundcube:label name='options' />"></span></a>
-				<p>
-					<label for="_from"><roundcube:label name="from" /></label>
-					<roundcube:object name="composeHeaders" part="from" form="form" id="_from" tabindex="1" />
-				</p>
-				<p>
-					<label for="_to"><roundcube:label name="to" /></label>
-					<roundcube:object name="composeHeaders" part="to" form="form" id="_to" rows="1" tabindex="2" />
-				</p>
-				<p id="compose-cc">
-					<label for="_cc"><roundcube:label name="cc" /></label>
-					<roundcube:object name="composeHeaders" part="cc" form="form" id="_cc" rows="1" tabindex="3" />
-				</p>
-				<p id="compose-bcc">
-					<label for="_bcc"><roundcube:label name="bcc" /></label>
-					<roundcube:object name="composeHeaders" part="bcc" form="form" id="_bcc" rows="1" tabindex="4" />
-				</p>
-				<p>
-					<a href="#cc" onclick="$('#compose-cc').show(); $('#cc-link').hide();" id="cc-link" class="iconlink add"><roundcube:label name="addcc" /></a>
-					<a href="#bcc" onclick="$('#compose-bcc').show(); $('#bcc-link').hide();" id="bcc-link" class="iconlink add"><roundcube:label name="addbcc" /></a>
-				</p>
-				<p>
-					<label for="compose-subject"><roundcube:label name="subject" /></label>
-					<roundcube:object name="composeSubject" id="compose-subject" form="form" tabindex="5" />
-				</p>
-		
+		<div data-role="header" data-position="fixed" data-theme="f"
+			data-tap-toggle="false">
+			<div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-left">
+				<roundcube:button command="list" type="link"
+					class="button back ui-link  ui-btn ui-shadow ui-icon-back ui-btn-icon-notext"
+					label="cancel" condition="!env:extwin" />
 			</div>
-			<!-- message compose body -->
-			<div id="composeview-bottom">
-				<div id="composebodycontainer">
-					<label for="composebody"><roundcube:label name="body" /></label>
-				<roundcube:object name="composeBody" id="composebody" form="form" tabindex="6" />
-				</div>
-				<div id="compose-attachments" class="rightcol">
-					<roundcube:object name="composeAttachmentList" id="attachment-list" class="attachmentslist" />
-				</div>
-			</div>
-			<!-- (collapsable) message options -->
-			<div id="composeoptions">
-				<roundcube:if condition="!in_array('htmleditor', (array)config:dont_override)" />
-				<span class="composeoption">
-					<label><roundcube:label name="editortype" />
-						<roundcube:object name="editorSelector" editorid="composebody" tabindex="14" /></label>
-				</span>
-				<roundcube:endif />
-				<span class="composeoption">
-					<label for="rcmcomposepriority"><roundcube:label name="priority" />
-						<roundcube:object name="prioritySelector" form="form" id="rcmcomposepriority" /></label>
-				</span>
-				<span class="composeoption">
-					<label><roundcube:object name="receiptCheckBox" form="form" id="rcmcomposereceipt" /> <roundcube:label name="returnreceipt" /></label>
-				</span>
-				<roundcube:if condition="config:smtp_server != ''" />
-				<span class="composeoption">
-					<label><roundcube:object name="dsnCheckBox" form="form" id="rcmcomposedsn" /> <roundcube:label name="dsn" /></label>
-				</span>
-				<roundcube:endif />
-				<roundcube:if condition="!config:no_save_sent_messages" />
-				<span class="composeoption">
-					<label><roundcube:label name="savesentmessagein" /> <roundcube:object name="storetarget" maxlength="30" style="max-width:12em" /></label>
-				</span>
-				<roundcube:endif />
-				<roundcube:container name="composeoptions" id="composeoptions" />
-			</div>
-		</form>
-		
-		<div class="ui-grid-a">
-			<div class="ui-block-a"><roundcube:button command="savedraft" type="link" class="button savedraft ui-link ui-btn ui-button-disabled ui-shadow ui-corner-all ui-icon-star ui-btn-icon-top" classAct="button savedraft ui-link ui-btn ui-shadow ui-corner-all ui-icon-star ui-btn-icon-top" classSel="button savedraft pressed ui-link ui-btn ui-shadow ui-corner-all ui-icon-star ui-btn-icon-top" label="save" title="savemessage" /></div>
-			<div class="ui-block-b"><a href="#upload-popup" data-rel="popup" data-position-to="window" class="ui-link ui-btn ui-button-disabled ui-shadow ui-corner-all ui-icon-tag ui-btn-icon-top" data-transition="pop" title="<roundcube:label name="addattachment" />"><roundcube:label name="attach" /></a></div>
-		</div>
-		
-		<div data-role="popup" id="upload-popup" data-theme="a" class="ui-content">
-			<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-		    <roundcube:object name="composeAttachmentForm" id="uploadform" buttons="no" />
-			<div class="formbuttons">
-				<roundcube:button command="send-attachment" type="link" class="button mainaction button_upload_photo ui-link ui-btn ui-btn-a ui-icon-camera ui-btn-icon-left ui-shadow ui-corner-all" label="upload" />
+			<h1>
+				<roundcube:object name="pagetitle" />
+			</h1>
+			<div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right">
+			  <a href="#upload-popup" data-rel="popup" data-position-to="window"
+		          class="ui-link ui-btn ui-shadow ui-corner-all ui-icon-paperclip ui-btn-icon-notext"
+		          data-transition="pop" title="<roundcube:label name="addattachment" />">
+              <roundcube:label name="attach" />
+        </a>
+			  <roundcube:button command="savedraft" type="link"
+              class="button savedraft ui-link ui-btn ui-shadow ui-corner-all ui-icon-save ui-btn-icon-notext"
+              label="save" title="savemessage" />
+				<roundcube:button command="send" type="link"
+							class="button send ui-link ui-btn ui-shadow ui-icon-play ui-btn-icon-notext"
+							label="send" title="sendmessage" />
 			</div>
 		</div>
-	</div>
-</div>
 
-<roundcube:include file="/includes/footer.html" />
+		<div role="main" class="ui-content ui-alt-icon">
+			<roundcube:form name="form" method="post" id="compose-content"
+				class="uibox">
+
+				<!-- message headers -->
+				<div id="composeheaders">
+				  <div class="compose-object">
+					 <roundcube:object name="composeHeaders" part="from" form="form" id="_from" tabindex="1" />
+					</div>					
+					<div id="compose-to" class="compose-object">
+					 <label for="_to"><roundcube:label name="to" /></label>
+					 <roundcube:object name="composeHeaders" part="to" form="form" id="_to" rows="1" tabindex="2" />
+					</div>
+					<div id="compose-cc" class="compose-object">
+						<label for="_cc"><roundcube:label name="cc" /></label>
+						<roundcube:object name="composeHeaders" part="cc" form="form"
+							id="_cc" rows="1" tabindex="3" />
+					</div>
+					<div id="compose-bcc" class="compose-object">
+						<label for="_bcc"><roundcube:label name="bcc" /></label>
+						<roundcube:object name="composeHeaders" part="bcc" form="form"
+							id="_bcc" rows="1" tabindex="4" />
+					</div>
+					<div>
+						<a href="#cc"
+							onclick="$('#compose-cc').show(); $('#cc-link').hide();"
+							id="cc-link" class="iconlink add"><roundcube:label
+								name="addcc" /></a> 
+						<a href="#bcc"
+							onclick="$('#compose-bcc').show(); $('#bcc-link').hide();"
+							id="bcc-link" class="iconlink add"><roundcube:label
+								name="addbcc" /></a>
+					</div>
+					<div id="compose-subject" class="compose-object">
+						<label for="compose-subject"><roundcube:label
+								name="subject" /></label>
+						<roundcube:object name="composeSubject" id="compose-subject"
+							form="form" tabindex="5" />
+					</div>
+          <div id="compose-attachments" class="rightcol">
+            <roundcube:object name="composeAttachmentList"
+              id="attachment-list" class="attachmentslist" />
+          </div>
+				</div>
+				<!-- message compose body -->
+				<div id="composeview-bottom">
+					<div id="composebodycontainer">
+					  <label for="composeBody"><roundcube:label
+                name="body" /></label>
+						<roundcube:object name="composeBody" id="composebody" form="form" 
+							tabindex="6" />
+					</div>					
+				</div>				
+				</form>
+
+				<div data-role="popup" id="upload-popup" data-theme="a"
+					class="ui-content">
+					<a href="#" data-rel="back"
+						class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+					<roundcube:object name="composeAttachmentForm" id="uploadform"
+						buttons="no" />
+					<div class="formbuttons">
+						<roundcube:button command="send-attachment" type="link"
+							class="button mainaction button_upload_photo ui-link ui-btn ui-btn-a ui-icon-camera ui-btn-icon-left ui-shadow ui-corner-all"
+							label="upload" />
+					</div>
+				</div>
+		</div>
+	</div>
+
+	<roundcube:include file="/includes/footer.html" />
 
 </body>
 </html>

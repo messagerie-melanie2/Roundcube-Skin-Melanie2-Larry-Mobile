@@ -4,10 +4,11 @@
 	white-space: nowrap;
 	display: block;
 	margin-right: 20px;
-	margin-top: 5px;
+	margin-top: 0px;
 	font-size: 14px;
 	line-height: 1.3em;
 	color: #000;
+	margin-left: 45px;
 }
 
 #messagelist li span.subject {
@@ -21,6 +22,7 @@
 	font-size: 12px;
 	line-height: 1.2em;
 	color: #666D74;
+	margin-left: 45px;
 }
 
 #messagelist li span.date {	
@@ -30,6 +32,73 @@
 	font-size: 12px;
 	color: #666D74;
 	line-height: 1.2em;
+}
+
+#messagelist li span.mobile_text {
+  display: table-cell;
+  background-color: #BDBDBD;
+  color: #FFF;
+  text-shadow: none;
+  font-weight: bold;
+  height: 40px;
+  width: 40px;
+  font-size: 90%;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+  top: -47px;
+  border-radius: 20px;
+}
+
+#messagelist li span.mobile_text.green {
+	background-color: #40C365;
+  color: #FFF;
+  text-shadow: none;
+}
+#messagelist li span.mobile_text.grey {
+  background-color: #BDBDBD;
+  color: #FFF;
+  text-shadow: none;
+}
+#messagelist li span.mobile_text.blue {
+  background-color: #1B98F8;
+  color: #FFF;
+  text-shadow: none;
+}
+#messagelist li span.mobile_text.yellow {
+  background-color: #FFC94C;
+  color: #FFF;
+  text-shadow: none;
+}
+#messagelist li span.mobile_text.red {
+  background-color: #FA383E;
+  color: #FFF;
+  text-shadow: none;
+}
+#messagelist li span.mobile_text.orange {
+  background-color: #FF9216;
+  color: #FFF;
+  text-shadow: none;
+}
+#messagelist li span.mobile_text.brown {
+  background-color: #3B170B;
+  color: #FFF;
+  text-shadow: none;
+}
+#messagelist li span.mobile_text.purple {
+  background-color: #4C0B5F;
+  color: #FFF;
+  text-shadow: none;
+}
+
+#messagelist li span.mobile_class {
+	display: none;
+}
+
+#messagelist li span.labels { 
+  font-size: 90%;
+  position: relative;
+  top: -110px;
 }
 
 #messagelist li span.attachment {
@@ -51,19 +120,23 @@
 #messagelist {
 	color: #333;
 	text-shadow: 0px 1px 0px #F3F3F3;
-	overflow: auto;
+	overflow: hidden;
 }
 
 #messagelist li {
 	border-top: 1px solid #DDD;
 	padding: 20px 5px 5px;
 	cursor: pointer;
-	min-height: 50px;
+	height: 50px;
 	min-width: 250px;
 }
 
+#messagelist li.unread {
+  border-left: 3px solid #1B98F8;
+}
+
 #messagelist li.selected {
-	background-color: #ededed;
+	background-color: #E0F2F7;
 }
 
 #messagelist li span {
@@ -71,8 +144,16 @@
 }
 
 #messagelist li:hover {
-	background-color: #ededed;
+	background-color: #E0F2F7;
 	cursor: pointer;
+}
+
+#messagelist li.selected span.mobile_text {  
+  text-indent: -9999px;
+  background-color: #000;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22iso-8859-1%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20%20width%3D%2214px%22%20height%3D%2214px%22%20viewBox%3D%220%200%2014%2014%22%20style%3D%22enable-background%3Anew%200%200%2014%2014%3B%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpolygon%20style%3D%22fill%3A%23FFFFFF%3B%22%20points%3D%2214%2C4%2011%2C1%205.003%2C6.997%203%2C5%200%2C8%204.966%2C13%204.983%2C12.982%205%2C13%20%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #messagelist li a,
@@ -97,6 +178,10 @@
 	color: #000;
 }
 
+#messagelist li span.status span.unread {
+	display: none;
+}
+
 #messagelist li span div.collapsed,
 #messagelist li span div.expanded,
 #messagelist li span.subject span.msgicon,
@@ -118,9 +203,7 @@
 #messagelist li span.status span.status,
 #messagelist li span.flag span.flagged,
 #messagelist li span.flag span.unflagged,
-#messagelist li span.flag span.unflagged:hover,
-#messagelist li span.status span.msgicon,
-#messagelist li span.status span.unread {
+#messagelist li span.flag span.unflagged:hover {
 	display: inline-block;
 	vertical-align: middle;
 	height: 18px;
@@ -309,6 +392,111 @@
 	display: none;
 }
 
+.jqm-message .ui-content,
+.jqm-compose .ui-content {
+	padding: 0px;
+}
+
+#compose-content {
+	min-height: 487px;
+}
+
+#composeheaders {
+	margin-top: -5px;
+}
+
+#composeheaders .compose-object {
+  padding: 0px 5px;
+  border-top: 1px solid #DDD;
+}
+
+#composeheaders #_from-button {
+  font-size: 90%;
+}
+
+#composeheaders a {
+  font-size: 90%;
+  padding: 5px;
+}
+
+#composeheaders #compose-cc,
+#composeheaders #compose-bcc,
+#composeheaders #compose-subject,
+#composeheaders #compose-to {
+	background-color: #fff;
+}
+
+#composeheaders #compose-cc label,
+#composeheaders #compose-bcc label,
+#composeheaders #compose-subject label,
+#composeheaders #compose-to label {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 90%;
+  margin: 0;
+  color: #045FB4;
+}
+
+#composeheaders #compose-cc textarea,
+#composeheaders #compose-bcc textarea,
+#composeheaders #compose-to textarea {
+	border-radius: 0px;
+	display: inline-block;
+  vertical-align:middle;
+  width: 85%;
+  border-style: none; 
+  border-color: Transparent; 
+  overflow: auto;
+  box-shadow: none;
+  margin: 0;
+}
+
+#composeheaders #compose-subject input {
+  border-radius: 0px;
+  display: inline-block;
+  vertical-align:middle;
+  border-style: none; 
+  border-color: Transparent; 
+  overflow: auto;
+  box-shadow: none;  
+  margin: 0;
+}
+
+#composeheaders #compose-subject .ui-input-text {
+  margin: 0;
+}
+
+#composeheaders #compose-subject .ui-focus {
+	box-shadow: none;
+}
+
+
+#composeview-bottom {
+	position: relative;
+	left: 0;
+	right: 0;
+	min-height: 200px;
+}
+
+#composeview-bottom label {
+  margin-left: 5px;
+  font-size: 90%;
+  color: #045FB4;
+}
+
+#composeview-bottom #composebodycontainer {
+	position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#composeview-bottom textarea {
+  border-radius: 0px;
+  margin-top: 0px;
+}
+
 #composeoptions {
 	display: none;
 	padding: 2px 0 0 8px;
@@ -373,6 +561,10 @@
 
 #messagecontent pre {
 	white-space: pre-wrap;
+}
+
+#messagebody {
+	overflow-x: auto; 
 }
 
 .unreadcount {
@@ -445,13 +637,20 @@
 	background: none repeat scroll 0% 0% #FFF;
 }
 
+#messageheader .subject {
+	margin-left: 85px;
+}
+
 #messageheader #contactphoto {
-	width: 75px;
-	height: auto;
+	width: 70px;
+	height: 70px;
 	overflow: hidden;
-	border-radius: 4px;
-	border: 1px solid #e6e6e6;
-	background: url(images/contactpic_48px.png?v=1bc4.353) center center no-repeat #fff;
+	border-radius: 35px;
+	border: 1px solid #585858;
+	background: #FFF url("images/contactpic_48px.png?v=1bc4.353") no-repeat scroll center center;
+	position: absolute;
+	top: 5px;
+  left: 5px;
 }
 
 #messageheader #contactphoto img {
@@ -467,8 +666,10 @@
 	top: 42px;
 }
 
+.jqm-mail-buttons-header,
 .jqm-mail-search-header {
 	display: none;
+	height: 45px;
 }
 
 .jqm-mail-search-header .searchbox {
@@ -488,7 +689,14 @@
 	height: 55px;
 	width: 55px;
 	border-radius: 28px;
-	background-color: #2ad;
+	background-color: #fa383e;
+}
+
+#jqm-mail-newmessage-button > a::after {
+	background-color: rgba(0, 0, 0, 0.3);
+	background-position: center center;
+	background-repeat: no-repeat;
+	border-radius: 1em;
 }
 
 div.slide_to_delete {
@@ -519,10 +727,14 @@ div.slide_to_mark {
 	color: #fff;
 	text-shadow: 0 1px 0 #111;
 	
+	top: 50px;
+	left: 30px;
+	
 	font-size: 16px;
 	margin: .5em 0;
 	padding: 1em .7em;
-	text-align: center;
+	text-align: left;
+	width: auto;
 	
-	position: absolute;
+	position: fixed;
 }

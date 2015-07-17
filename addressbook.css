@@ -203,17 +203,33 @@ form #contacthead {
 	width: 99%;
 }
 
-#contact-list-left-panel {
-	overflow-y: auto;
-	border-right: 1px solid grey;
+.jqm-addressbook-search-header {
+  display: none;
 }
 
-#contact-list-left-panel #contacts-table {
-	background-color: #f9f9f9;
-	overflow: auto;
-	overflow-x: hidden;
+.jqm-addressbook-search-header .searchbox {
+  margin-left: 60px;
+  margin-right: 10px;
+  margin-top: -6px;
 }
 
-#contact-list-left-panel #contacts-table td {
-	padding-left: 10px;
+#jqm-addressbook-newcontact-button {
+  position: fixed;
+  right: 20px;
+  bottom: 10px;
+  -webkit-transform: translateZ(0);
+}
+
+#jqm-addressbook-newcontact-button > a {
+  height: 55px;
+  width: 55px;
+  border-radius: 28px;
+  background-color: #fa383e;
+}
+
+#jqm-addressbook-newcontact-button > a::after {
+  background-color: rgba(0, 0, 0, 0.3);
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 1em;
 }
