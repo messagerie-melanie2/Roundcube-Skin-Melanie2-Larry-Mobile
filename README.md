@@ -61,3 +61,7 @@ Select messages on the list
 Contacts list
 
 ![capture d ecran 2015-07-17 a 14 35 25](https://cloud.githubusercontent.com/assets/3693239/8747281/a149343c-2c91-11e5-81a2-c48e098e9cfd.png)
+
+Settings
+![capture d ecran 2015-07-27 a 18 29 38](https://cloud.githubusercontent.com/assets/3693239/8911422/c17097d4-348c-11e5-906a-456b09872bc1.png)
+
