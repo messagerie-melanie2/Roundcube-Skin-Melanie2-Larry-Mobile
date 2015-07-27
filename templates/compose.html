@@ -12,7 +12,7 @@
 			data-tap-toggle="false">
 			<div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-left">
 				<roundcube:button command="list" type="link"
-					class="button back ui-link  ui-btn ui-shadow ui-icon-back ui-btn-icon-notext"
+					class="button back ui-link  ui-btn ui-icon-back ui-btn-icon-notext"
 					label="cancel" condition="!env:extwin" />
 			</div>
 			<h1>
@@ -20,15 +20,15 @@
 			</h1>
 			<div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right">
 			  <a href="#upload-popup" data-rel="popup" data-position-to="window"
-		          class="ui-link ui-btn ui-shadow ui-corner-all ui-icon-paperclip ui-btn-icon-notext"
+		          class="ui-link ui-btn ui-corner-all ui-icon-paperclip ui-btn-icon-notext"
 		          data-transition="pop" title="<roundcube:label name="addattachment" />">
               <roundcube:label name="attach" />
         </a>
 			  <roundcube:button command="savedraft" type="link"
-              class="button savedraft ui-link ui-btn ui-shadow ui-corner-all ui-icon-save ui-btn-icon-notext"
+              class="button savedraft ui-link ui-btn ui-corner-all ui-icon-save ui-btn-icon-notext"
               label="save" title="savemessage" />
 				<roundcube:button command="send" type="link"
-							class="button send ui-link ui-btn ui-shadow ui-icon-play ui-btn-icon-notext"
+							class="button send ui-link ui-btn ui-icon-play ui-btn-icon-notext"
 							label="send" title="sendmessage" />
 			</div>
 		</div>
@@ -91,12 +91,12 @@
 				<div data-role="popup" id="upload-popup" data-theme="a"
 					class="ui-content">
 					<a href="#" data-rel="back"
-						class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+						class="ui-btn ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
 					<roundcube:object name="composeAttachmentForm" id="uploadform"
 						buttons="no" />
 					<div class="formbuttons">
 						<roundcube:button command="send-attachment" type="link"
-							class="button mainaction button_upload_photo ui-link ui-btn ui-btn-a ui-icon-camera ui-btn-icon-left ui-shadow ui-corner-all"
+							class="button mainaction button_upload_photo ui-link ui-btn ui-btn-a ui-icon-camera ui-btn-icon-left ui-corner-all"
 							label="upload" />
 					</div>
 				</div>

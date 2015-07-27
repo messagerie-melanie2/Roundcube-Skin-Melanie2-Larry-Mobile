@@ -7,16 +7,16 @@
 <body>
 <div data-role="page" data-ajax="true" data-theme="a" class="jqm-addressbook-search" data-dom-cache="true">
 	<div data-role="header" data-position="fixed" data-theme="f" data-tap-toggle="false">
-		<roundcube:button name="cancel" type="link" class="button button_cancel ui-link ui-btn ui-shadow ui-icon-back ui-btn-icon-notext" label="cancel" onclick="history.back()" condition="env:action=='add'" />
-		<roundcube:button command="show" type=""link"" class="button button_show_contact ui-link ui-btn ui-shadow ui-icon-back ui-btn-icon-notext" label="cancel" condition="env:action=='edit'" />		
+		<roundcube:button name="cancel" type="link" class="button button_cancel ui-link ui-btn ui-icon-back ui-btn-icon-notext" label="cancel" onclick="history.back()" condition="env:action=='add'" />
+		<roundcube:button command="show" type=""link"" class="button button_show_contact ui-link ui-btn ui-icon-back ui-btn-icon-notext" label="cancel" condition="env:action=='edit'" />		
 		<h1 class="boxtitle">
 			<roundcube:if condition="env:action=='add'" /><roundcube:label name="addcontact" />
 			<roundcube:else /><roundcube:label name="editcontact" />
 		<roundcube:endif /></h1>
-		<roundcube:button command="save" type="link" class="button mainaction ui-link ui-btn ui-shadow ui-icon-save ui-btn-icon-notext" label="save" />
+		<roundcube:button command="save" type="link" class="button mainaction ui-link ui-btn ui-icon-save ui-btn-icon-notext" label="save" />
 	</div>
 	
-	<div role="main" class="ui-content jqm-content">
+	<div role="main" class="ui-content jqm-content ui-alt-icon">
 		<roundcube:form name="editform" method="post" id="contact-details" class="boxcontent">
 			<roundcube:if condition="strlen(env:sourcename)" />
 				<div id="sourcename"><roundcube:label name="addressbook" />: <roundcube:var name="env:sourcename" condition="env:action!='add'" /><roundcube:object name="sourceselector" id="sourceselect" condition="env:action=='add'" /></div>
@@ -43,10 +43,10 @@
 		</form>		
 		
 		<div data-role="popup" id="upload-popup" data-theme="a" class="ui-content">
-			<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+			<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
 		    <roundcube:object name="photoUploadForm" id="upload-form" size="30" buttons="no" />
 			<div class="formbuttons">
-				<roundcube:button command="upload-photo" type="link" class="button mainaction button_upload_photo ui-link ui-btn ui-btn-a ui-icon-camera ui-btn-icon-left ui-shadow ui-corner-all" label="upload" />
+				<roundcube:button command="upload-photo" type="link" class="button mainaction button_upload_photo ui-link ui-btn ui-btn-a ui-icon-camera ui-btn-icon-left ui-corner-all" label="upload" />
 			</div>
 		</div>
 	</div>

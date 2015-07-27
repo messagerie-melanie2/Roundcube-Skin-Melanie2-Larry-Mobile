@@ -1,0 +1,26 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+<head>
+<title><roundcube:object name="pagetitle" /></title>
+<roundcube:include file="/includes/links.html" />
+</head>
+<body>
+<div data-role="page" data-ajax="true" data-theme="a" class="jqm-settings-edit" data-dom-cache="true">
+  <div data-role="header" data-position="fixed" data-theme="f" data-tap-toggle="false">
+    <a href="./?_task=settings&_action=preferences" data-ajax="false" class="ui-btn ui-link ui-icon-back ui-btn-icon-notext">Back</a>
+    <h1 class="boxtitle"><roundcube:object name="sectionname" /></h1>
+    <roundcube:button command="save" type="link" class="button mainaction ui-link ui-btn ui-btn-right ui-icon-save ui-btn-icon-notext" label="save" />
+  </div>
+  
+  <div role="main" class="ui-content jqm-content ui-alt-icon">
+	  <div id="preferences-details" class="boxcontent">
+		 <roundcube:object name="userprefs" form="form" class="propform" />
+		</div>
+  </div>
+</div>
+
+
+<roundcube:include file="/includes/footer.html" />
+
+</body>
+</html>

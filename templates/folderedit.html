@@ -1,0 +1,31 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+<head>
+<title><roundcube:object name="pagetitle" /></title>
+<roundcube:include file="/includes/links.html" />
+</head>
+<body>
+<div data-role="page" data-theme="a" class="jqm-folder-edit">
+  <div data-role="header" data-position="fixed" data-theme="f" data-tap-toggle="false">
+    <div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-left">
+        <a href="./?_task=settings&_action=folders" data-ajax="false" class="ui-btn ui-link ui-icon-back ui-btn-icon-notext">Back</a>
+    </div>
+    <h1 class="boxtitle"><roundcube:label name="folderproperties" /></h1>
+    <div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right">
+      <roundcube:button command="delete-folder" type="link" label="delete" class="active ui-link ui-btn ui-icon-trash-o ui-btn-icon-notext" />
+      <roundcube:button command="save" type="link" class="button mainaction ui-link ui-btn ui-icon-save ui-btn-icon-notext" label="save" />
+    </div>
+  </div>
+  
+  <div role="main" class="ui-content jqm-content ui-alt-icon">
+    <div class="boxcontent">
+		  <roundcube:object name="folderdetails" class="propform" />
+		</div>
+  </div>
+</div>
+
+
+<roundcube:include file="/includes/footer.html" />
+
+</body>
+</html>

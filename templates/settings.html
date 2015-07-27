@@ -1,0 +1,47 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+<head>
+<title><roundcube:object name="pagetitle" /></title>
+<roundcube:include file="/includes/links.html" />
+</head>
+<body>
+<div data-role="page" class="jqm-settings" data-theme="f" id="page_settings_list">
+  <div data-role="header" data-position="fixed" data-theme="f" class="jqm-settings-header" data-tap-toggle="false">
+    <div data-role="controlgroup" data-type="horizontal" class="jqm-settings-leftpanel-link ui-mini ui-btn-left">
+      <a href="#settings-left-panel" class="ui-link ui-btn ui-icon-bars ui-btn-icon-notext" data-rel="open">Groups</a>
+    </div>
+    <h1><roundcube:label name="preferences" /></h1>
+    <div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right">
+      <a href="#apps-right-panel" class="jqm-apps-rightpanel-link ui-link ui-btn ui-icon-grid ui-btn-icon-notext" data-rel="open">Apps</a>
+    </div>
+  </div>
+  
+  <div id="settings-left-panel" data-theme="c" data-role="panel" data-position="left" data-display="push" data-position-fixed="true" class="jqm-settings-left-panel">
+    <div class="ui-grid-solo">
+      <div class="ui-block-a">
+        <div id="userphoto"><roundcube:object name="userphoto" /></div>
+      </div>
+    </div>
+    <div class="ui-grid-solo">
+        <div class="ui-block-a"><roundcube:object name="username" /></div>
+    </div>
+    <br>
+    <div id="settingslist_mobile" data-theme="h" data-role="listview" data-ajax="false">
+	    <ul class="listing iconized">
+	      <roundcube:object name="settingstabs" class="listitem" tagname="li" />
+	    </ul>
+	    <roundcube:container name="tabs" id="settings-tabs" />
+    </div>    
+  </div>
+  
+  <roundcube:include file="/includes/rightpanel.html" />
+  
+  <div role="main" class="ui-content jqm-content">
+    <roundcube:object name="sectionslist" id="sections-table" class="listing" noheader="true" />
+  </div>
+</div>
+
+<roundcube:include file="/includes/footer.html" />
+
+</body>
+</html>

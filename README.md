@@ -6,17 +6,15 @@ This is the mobile version of melanie2_larry skin for Roundcube 1.1.2
 Presentation
 ------------
 
-Skin mobile for Roundcube. 
+Mobile skin for Roundcube. 
 It needs the jquery_mobile plugin and the mobile plugin.
-This is a beta version
-Mobile view for mails and contacts
+Mobile view for mails, contacts and settings.
 Infinite scroll, ajax open pages & responsive design
-Missing the settings task
 
 Version
 -------
 
-Mobile Melanie2 Skin 0.3
+Mobile Melanie2 Skin 0.4
 
 
 Author

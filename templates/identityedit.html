@@ -1,0 +1,30 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+<head>
+<title><roundcube:object name="pagetitle" /></title>
+<roundcube:include file="/includes/links.html" />
+</head>
+<body>
+<div data-role="page" data-ajax="true" data-theme="a" class="jqm-folder-edit" data-dom-cache="true">
+  <div data-role="header" data-position="fixed" data-theme="f" data-tap-toggle="false">
+    <div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-left">
+        <a href="./?_task=settings&_action=identities" data-ajax="false" class="ui-btn ui-link ui-icon-back ui-btn-icon-notext">Back</a>
+    </div>
+    <h1 class="boxtitle"><roundcube:object name="steptitle" /></h1>
+    <div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right">
+      <roundcube:button command="save" type="link" class="button mainaction ui-link ui-btn ui-icon-save ui-btn-icon-notext" label="save" />
+    </div>
+  </div>
+  
+  <div role="main" class="ui-content jqm-content">
+    <div id="preferences-details" class="boxcontent">
+		    <roundcube:object name="identityform" class="propform" size="40" textareacols="40" textarearows="6" />
+		</div>
+  </div>
+</div>
+
+
+<roundcube:include file="/includes/footer.html" />
+
+</body>
+</html>

@@ -8,13 +8,13 @@
 <div data-role="page" class="jqm-contact">
 	<div data-role="header" data-position="fixed" data-theme="f" class="jqm-contact-header" data-tap-toggle="false">
 		<div style="display: none;" data-role="controlgroup" data-type="horizontal" class="jqm_contact_list_group ui-mini ui-btn-left">
-			<a href="#" class="jqm_contact_list ui-btn ui-link ui-shadow ui-icon-back ui-btn-icon-notext">List</a>
+			<a href="#" class="jqm_contact_list ui-btn ui-link ui-icon-back ui-btn-icon-notext">List</a>
 		</div>		
-		<roundcube:button command="list" type="link" class="rc_contact_back button back disabled ui-link ui-btn-left ui-btn ui-shadow ui-icon-back ui-btn-icon-notext" classAct="button back ui-link ui-btn-left ui-btn ui-shadow ui-icon-back ui-btn-icon-notext" classSel="button back pressed ui-link ui-btn-left ui-btn ui-shadow ui-icon-back ui-btn-icon-notext" label="back" />
+		<roundcube:button command="list" type="link" class="rc_contact_back button back ui-link ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext" label="back" />
 		<h1><roundcube:label name="contactproperties" /></h1>
 		<div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right">
-			<roundcube:button command="delete_mobile" type="link" title="deletecontact" class="listbutton delete ui-link ui-btn ui-icon-trash-o ui-shadow ui-btn-icon-notext" innerClass="inner" label="delete" condition="!ENV:readonly" />
-			<roundcube:button command="edit" class="button mainaction ui-link ui-btn ui-shadow ui-icon-edit ui-btn-icon-notext" label="editcontact" condition="!ENV:readonly" />
+			<roundcube:button command="delete_mobile" type="link" title="deletecontact" class="listbutton delete ui-link ui-btn ui-icon-trash-o ui-btn-icon-notext" innerClass="inner" label="delete" condition="!ENV:readonly" />
+			<roundcube:button command="edit" class="button mainaction ui-link ui-btn ui-icon-edit ui-btn-icon-notext" label="editcontact" condition="!ENV:readonly" />
 		</div>
 	</div>
 
@@ -33,7 +33,7 @@
 			</div>
 		
 		</div>
-		<roundcube:button command="delete_mobile" type="link" title="deletecontact" class="listbutton delete ui-link ui-btn ui-btn-h ui-icon-trash-o ui-btn-icon-left ui-shadow ui-corner-all" innerClass="inner" label="delete" condition="!ENV:readonly" />
+		<roundcube:button command="delete_mobile" type="link" title="deletecontact" class="listbutton delete ui-link ui-btn ui-btn-h ui-icon-trash-o ui-btn-icon-left ui-corner-all" innerClass="inner" label="delete" condition="!ENV:readonly" />
 	</div>
 </div>
 
