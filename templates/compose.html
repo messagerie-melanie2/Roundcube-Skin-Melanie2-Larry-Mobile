@@ -14,6 +14,9 @@
 				<roundcube:button command="list" type="link"
 					class="button back ui-link  ui-btn ui-icon-back ui-btn-icon-notext"
 					label="cancel" condition="!env:extwin" />
+				<a class="ui-link  ui-btn ui-icon-code ui-btn-icon-notext" 
+				    href="#"
+				    onclick="return rcmail.command('toggle-editor', {id: 'composebody', html: $('#composebody').is(':visible')}, '', event)">&lt; /&gt;</a>
 			</div>
 			<h1>
 				<roundcube:object name="pagetitle" />
