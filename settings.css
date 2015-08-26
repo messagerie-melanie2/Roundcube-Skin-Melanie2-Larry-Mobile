@@ -105,3 +105,17 @@
 #subscription-table li a {
   padding-left: 30px;
 }
+
+#preferences-details table.propform tr,
+#preferences-details table.propform td,
+#preferences-details table.propform {
+  width: 100%;
+  overflow: hidden;
+  display: block;
+}
+
+#preferences-details table.propform .ui-select {
+  max-width: 100%;
+  max-width: 99%;
+  overflow: hidden;
+}

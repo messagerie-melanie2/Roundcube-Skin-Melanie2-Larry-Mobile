@@ -14,7 +14,7 @@ Infinite scroll, ajax open pages & responsive design
 Version
 -------
 
-Mobile Melanie2 Skin 0.4.1
+Mobile Melanie2 Skin 0.4.2
 
 
 Author
