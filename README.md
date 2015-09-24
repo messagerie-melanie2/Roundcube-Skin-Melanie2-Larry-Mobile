@@ -2,6 +2,7 @@ melanie2_larry_mobile
 =====================
 
 This is the mobile version of melanie2_larry skin for Roundcube 1.1.2
+This skin is compatible with PHP 5.4 and above. Support for PHP 5.2 and 5.3 will come
 
 Presentation
 ------------
