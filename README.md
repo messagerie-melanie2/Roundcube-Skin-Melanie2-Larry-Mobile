@@ -1,8 +1,7 @@
 melanie2_larry_mobile
 =====================
 
-This is the mobile version of melanie2_larry skin for Roundcube 1.1.2
-This skin is compatible with PHP 5.4 and above. Support for PHP 5.2 and 5.3 will come
+This is the mobile version of melanie2_larry skin for Roundcube 1.1.3
 
 Presentation
 ------------
@@ -15,7 +14,7 @@ Infinite scroll, ajax open pages & responsive design
 Version
 -------
 
-Mobile Melanie2 Skin 0.4.2
+Mobile Melanie2 Skin 0.4.3
 
 
 Author
@@ -27,7 +26,7 @@ PNE Annuaire et Messagerie/MEDDE
 Installation
 ------------
 
-Works on Roundcube 1.1.2
+Works on Roundcube 1.1.3
 
 You need to add mobile plugin (https://github.com/messagerie-melanie2/roundcube_mobile) and jquery_mobile plugin (https://github.com/messagerie-melanie2/roundcube_jquery_mobile) in plugins folder
 
