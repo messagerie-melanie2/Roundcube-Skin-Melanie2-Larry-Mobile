@@ -1,7 +1,7 @@
 melanie2_larry_mobile
 =====================
 
-This is the mobile version of melanie2_larry skin for Roundcube 1.1.5
+This is the mobile version of melanie2_larry skin for Roundcube 1.2.1
 
 Presentation
 ------------
