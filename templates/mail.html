@@ -66,6 +66,15 @@
 				<roundcube:object name="searchform" id="quicksearchbox" />
 			</div>
 		</div>
+		
+		<div data-role="footer" data-position="fixed" data-theme="f"
+      class="jqm-mail-search-header" data-tap-toggle="false">
+      <!-- search filter -->
+      <div id="searchfilter" data-role="controlgroup" data-type="horizontal"
+        class="ui-mini">
+        <roundcube:object name="searchfilter" class="searchfilter decorated" id="messagessearchfilter" aria-controls="messagelist" />
+      </div>
+    </div>
 
 		<div id="mailview-left-panel" data-theme="c" data-role="panel"
 			data-position="left" data-display="push" data-position-fixed="true"
@@ -86,11 +95,6 @@
 						class="button compose jqm-mail-button-compose ui-link ui-btn ui-btn-a ui-alt-icon ui-icon-edit ui-btn-icon-left ui-corner-all"
 						label="compose" title="writenewmessage" />
 				</div>
-			</div>
-			<!-- search filter -->
-			<div id="searchfilter">
-			  <label for="messagessearchfilter" class="voice"><roundcube:label name="arialabelmessagessearchfilter" /></label>
-			  <roundcube:object name="searchfilter" class="searchfilter decorated" id="messagessearchfilter" aria-controls="messagelist" />
 			</div>
 			<!-- PAMELA Ajout d'un conteneur pour le nom de la boite -->
 			<roundcube:container name="folderlistheader_mobile"
