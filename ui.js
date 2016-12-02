@@ -298,40 +298,6 @@ function rcube_mail_ui()
     // turn a group of fieldsets into tabs
     $('.tabbed').each(function(idx, elem){ init_tabs(elem); })
 
-    // decorate select elements
-    $('select.decorated').each(function(){
-      if (bw.opera) {
-        $(this).removeClass('decorated');
-        return;
-      }
-
-      var select = $(this),
-        parent = select.parent(),
-        height = Math.max(select.height(), 26) - 2,
-        width = select.width() - 22,
-        title = $('option', this).first().text();
-
-      if ($('option:selected', this).val() != '')
-        title = $('option:selected', this).text();
-
-      var overlay = $('<a class="menuselector"><span class="handle">' + title + '</span></a>')
-        .css('position', 'absolute')
-        .offset(select.position())
-        .insertAfter(select);
-
-      overlay.children().width(width).height(height).css('line-height', (height - 1) + 'px');
-
-      if (parent.css('position') != 'absolute')
-        parent.css('position', 'relative');
-
-      // re-set original select width to fix click action and options width in some browsers
-      select.width(overlay.width())
-        .change(function() {
-          var val = $('option:selected', this).text();
-          $(this).next().children().text(val);
-        });
-    });
-
     // set min-width to show all toolbar buttons
     var screen = $('body > div.minwidth');
     if (screen.length) {
