@@ -50,6 +50,18 @@
   border-radius: 20px;
 }
 
+#messagelist li span.mobile_text img {
+	height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  margin-bottom: -4px;
+  border: 1px solid #585858;
+}
+#messagelist li span.mobile_text.notext {
+  text-indent: -9999px;
+  white-space: nowrap !important;
+}
+
 #messagelist li span.mobile_text.green {
 	background-color: #40C365;
   color: #FFF;
