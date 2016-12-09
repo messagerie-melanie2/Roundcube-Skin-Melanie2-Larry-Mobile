@@ -17,6 +17,11 @@
 				<a class="ui-link  ui-btn ui-icon-code ui-btn-icon-notext" 
 				    href="#"
 				    onclick="return rcmail.command('toggle-editor', {id: 'composebody', html: $('#composebody').is(':visible')}, '', event)">&lt; /&gt;</a>
+				<roundcube:if condition="env:isenigma" />
+          <roundcube:button command="menu-open" prop="enigmamenu"
+                class="button enigma ui-link ui-btn ui-corner-all ui-icon-lock ui-btn-icon-notext"
+                label="enigma.encryption" title="enigma.encryptionoptions" />
+        <roundcube:endif />
 			</div>
 			<h1>
 				<roundcube:object name="pagetitle" />
@@ -29,7 +34,7 @@
         </a>
 			  <roundcube:button command="savedraft" type="link"
               class="button savedraft ui-link ui-btn ui-corner-all ui-icon-save ui-btn-icon-notext"
-              label="save" title="savemessage" />
+              label="save" title="savemessage" />        
 				<roundcube:button command="send" type="link"
 							class="button send ui-link ui-btn ui-icon-play ui-btn-icon-notext"
 							label="send" title="sendmessage" />

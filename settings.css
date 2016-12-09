@@ -11,6 +11,7 @@
   text-shadow: 0 1px 0 #08b;
 }
 
+#keys-table,
 #identities-table,
 #sections-table {
   width: 100%;
@@ -19,18 +20,21 @@
   overflow: auto;
 }
 
+#keys-table td,
 #identities-table td,
 #sections-table td {
   border-bottom: 1px solid #DDD;
   padding: 20px 0px 20px;
 }
 
+#keys-table tr:hover,
 #identities-table tr:hover,
 #sections-table tr:hover {
   background-color:#ededed;
   cursor: pointer;
 }
 
+#keys-table tr.selected,
 #identities-table tr.selected,
 #sections-table tr.selected {
   background-color: #ededed;
@@ -118,4 +122,8 @@
   max-width: 100%;
   max-width: 99%;
   overflow: hidden;
+}
+
+#sections-table #rcmrowenigma .section {
+	background: none !important;
 }
