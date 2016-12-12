@@ -667,7 +667,7 @@
 
 #messageheader #contactphoto img {
 	width: 75px;
-	height: auto;
+	height: 75px;
 	border-radius: 4px;
 }
 
