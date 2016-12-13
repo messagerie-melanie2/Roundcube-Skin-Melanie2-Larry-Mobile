@@ -1,7 +1,7 @@
 melanie2_larry_mobile
 =====================
 
-This is the mobile version of melanie2_larry skin for Roundcube 1.2.1
+This is the mobile version of melanie2_larry skin for Roundcube 1.2.3
 
 Presentation
 ------------
@@ -14,7 +14,7 @@ Infinite scroll, ajax open pages & responsive design
 Version
 -------
 
-Mobile Melanie2 Skin 0.4.5
+Mobile Melanie2 Skin 0.4.6
 
 
 Author
@@ -26,7 +26,7 @@ PNE Annuaire et Messagerie/MEDDE
 Installation
 ------------
 
-Works on Roundcube 1.1.5
+Works on Roundcube 1.2.3
 
 You need to add mobile plugin (https://github.com/messagerie-melanie2/roundcube_mobile) and jquery_mobile plugin (https://github.com/messagerie-melanie2/roundcube_jquery_mobile) in plugins folder
 
