@@ -74,3 +74,8 @@ Settings
 
 ![capture d ecran 2015-07-27 a 18 29 38](https://cloud.githubusercontent.com/assets/3693239/8911422/c17097d4-348c-11e5-906a-456b09872bc1.png)
 
+
+Issues
+------
+
+Before opening an issue, make sure to use last releases of plugin (https://github.com/messagerie-melanie2/Roundcube-Plugin-Mobile/releases/latest) and skin (https://github.com/messagerie-melanie2/Roundcube-Skin-Melanie2-Larry-Mobile/releases/latest). Thank you.
