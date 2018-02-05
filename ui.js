@@ -8,7 +8,7 @@
  * by keeping credits to the original autors in the README file.
  * See http://creativecommons.org/licenses/by-sa/3.0/ for details.
  */
-
+// Fixed for work with jQuery 3. 
 
 function rcube_mail_ui()
 {
@@ -315,7 +315,7 @@ function rcube_mail_ui()
         }
       });
 
-    $('iframe').load(function(e){
+    $('iframe').on( 'load', function(e){ // JSI
       // this = iframe
       try {
         var doc = this.contentDocument ? this.contentDocument : this.contentWindow ? this.contentWindow.document : null;
