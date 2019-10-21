@@ -11,14 +11,16 @@ label {
 	margin-bottom: 1em;
 }
 #login-form {
-	width: 250px;
+	width: 100%;
+	min-width: 250px;
+	max-width: 300px;
 	margin: 50px auto;
 	padding: 25px;
 	background-color: rgba(250,250,250,0.5);
 	border-radius: 5px;
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2), 
-    			inset 0px 1px 0px 0px rgba(250, 250, 250, 0.5);
-    border: 1px solid rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2),
+				inset 0px 1px 0px 0px rgba(250, 250, 250, 0.5);
+	border: 1px solid rgba(0, 0, 0, 0.3);
 }
 #login-form input[type=password],
 #login-form input[type=text] {
@@ -26,7 +28,7 @@ label {
 	padding: 5px;
 	border: 1px solid rgba(0, 0, 0, 0.3);
 	border-radius: 3px;
-	box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 
+	box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.1),
 				0px 1px 0px 0px rgba(250, 250, 250, 0.5) ;
 }
 #login-form input[type=submit] {
@@ -48,18 +50,20 @@ label {
 }
 
 #login-form table {
-  width: 200px;
+	width: 100%;
 }
 
 #login-form table .title {
-  width: 50px;
+	width: 50px;
 }
 
 #login-form table .input {
-  width: 175px;
+	box-sizing: border-box;
+	width: 100%;
 }
 
 #login-form table .input input,
 #login-form table .input select {
-  width: 175px;
+	box-sizing: border-box;
+	width: 100%;
 }
